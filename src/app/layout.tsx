@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import { Raleway } from "next/font/google"
 import "./globals.css"
 import { siteConfig } from "@/lib/config"
@@ -30,7 +31,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#0d1f3d" />
       </head>
       <body className={`${raleway.variable} font-body antialiased`}>
-        <FacebookPixel />
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
         {children}
       </body>
     </html>
