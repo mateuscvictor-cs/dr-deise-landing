@@ -1,3 +1,24 @@
+export type QuizAnswer = "A" | "B" | "C"
+
+export type QuizNivel = "risco" | "transicao" | "crescimento" | "estruturado"
+
+export interface QuizAnswers {
+  q1: QuizAnswer
+  q2: QuizAnswer
+  q3: QuizAnswer
+  q4: QuizAnswer
+  q5: QuizAnswer
+  q6: QuizAnswer
+  q7: QuizAnswer
+  q8: QuizAnswer
+  q9: QuizAnswer
+}
+
+export interface QuizSubmitPayload {
+  email: string
+  answers: QuizAnswers
+}
+
 export interface LeadFormData {
   nome: string
   whatsapp: string
@@ -35,6 +56,7 @@ export interface SiteConfig {
     uf: string
     whatsapp: string
     regiaoAtendida: string
+    calculadoraUrl: string
   }
   ebook: {
     titulo: string

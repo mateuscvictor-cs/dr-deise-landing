@@ -8,7 +8,7 @@ export function MobileFloatingCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.getElementById("ebook")
+      const heroSection = document.getElementById("quiz")
       if (heroSection) {
         const rect = heroSection.getBoundingClientRect()
         setIsVisible(rect.bottom < 0)
@@ -30,11 +30,11 @@ export function MobileFloatingCTA() {
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <motion.a
-            href="#formulario"
+            href="/quiz"
             className="block text-center w-full bg-transparent border-2 border-accent text-white hover:bg-accent hover:text-primary px-6 py-3 rounded-lg font-semibold transition-all duration-300"
             whileTap={{ scale: 0.98 }}
           >
-            Baixar E-book Grátis
+            Fazer o Quiz
           </motion.a>
         </motion.div>
       )}

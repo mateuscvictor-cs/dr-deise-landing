@@ -70,7 +70,7 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-4">
             <motion.a
-              href="#formulario"
+              href="/quiz"
               className="inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-primary px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -78,7 +78,7 @@ export function Header() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Baixar E-book
+              Fazer o Quiz
             </motion.a>
           </div>
 
@@ -150,7 +150,7 @@ export function Header() {
                   </motion.a>
                 ))}
                 <motion.a
-                  href="#formulario"
+                  href="/quiz"
                   className="mt-4 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-primary px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                   initial={{ opacity: 0, y: 20 }}
@@ -158,7 +158,7 @@ export function Header() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3, delay: 0.4 }}
                 >
-                  Baixar E-book Grátis
+                  Fazer o Quiz
                 </motion.a>
               </nav>
             </motion.div>

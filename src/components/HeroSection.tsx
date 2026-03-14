@@ -2,15 +2,14 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { siteConfig } from "@/lib/config"
 import { FadeInView } from "./animations"
 import { GlassCard } from "./ui"
-import { LeadForm } from "./LeadForm"
 
 export function HeroSection() {
   return (
-    <section id="ebook" className="relative w-full flex flex-col md:block bg-primary">
-      {/* Mobile: Image Section (Top) */}
+    <section id="quiz" className="relative w-full flex flex-col md:block bg-primary">
       <div className="md:hidden relative w-full h-[65vh]">
         <Image
           src="/hero-mobile.png"
@@ -23,7 +22,6 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent" />
       </div>
 
-      {/* Desktop: Background Image */}
       <div className="absolute inset-0 hidden md:block z-0">
         <Image
           src="/hero-desktop.png"
@@ -37,7 +35,6 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary/50 to-primary/95" />
       </div>
 
-      {/* Mobile: Text Section (Bottom) & Desktop: Grid Content */}
       <div className="relative z-10 w-full md:min-h-screen md:flex md:items-center">
         <div className="container-wide mx-auto px-4 md:pt-36 md:pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-center w-full">
@@ -49,7 +46,7 @@ export function HeroSection() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="bg-accent/20 text-accent text-xs font-semibold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full inline-block">
-                  E-book Gratuito
+                  Score GIA
                 </span>
               </motion.div>
 
@@ -59,7 +56,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                {siteConfig.ebook.titulo}
+                Descubra seu Score GIA
               </motion.h1>
 
               <motion.p
@@ -68,22 +65,21 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                {siteConfig.ebook.subtitulo}
+                9 perguntas rápidas para avaliar Gestão, Influência e Automação da sua clínica. Receba seu score e o Relatório Estratégico completo por e-mail.
               </motion.p>
 
-              {/* Mobile Only: CTA Button */}
               <motion.div
                 className="md:hidden flex flex-col items-center gap-4 mb-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <a
-                  href="#formulario-mobile"
-                  className="bg-accent text-primary px-8 py-3 rounded-lg font-bold w-full max-w-xs shadow-lg shadow-accent/20 animate-pulse"
+                <Link
+                  href="/quiz"
+                  className="bg-accent text-primary px-8 py-3 rounded-lg font-bold w-full max-w-xs shadow-lg shadow-accent/20 animate-pulse text-center"
                 >
-                  BAIXAR AGORA
-                </a>
+                  Fazer o Quiz
+                </Link>
               </motion.div>
 
               <motion.div
@@ -92,20 +88,35 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <p className="text-sm text-accent font-medium mb-4">O que você vai descobrir:</p>
+                <p className="text-sm text-accent font-medium mb-4">O que você descobre:</p>
                 <ul className="space-y-4 inline-block text-left">
-                  {siteConfig.ebook.bullets.map((bullet, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start gap-3 text-white/90 text-sm"
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                    >
-                      <span className="text-accent mt-0.5 flex-shrink-0 opacity-100">✓</span>
-                      <span>{bullet}</span>
-                    </motion.li>
-                  ))}
+                  <motion.li
+                    className="flex items-start gap-3 text-white/90 text-sm"
+                    initial={{ opacity: 0, x: -15 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                  >
+                    <span className="text-accent mt-0.5 flex-shrink-0 opacity-100">✓</span>
+                    <span>Score por pilar: Gestão, Influência e Automação</span>
+                  </motion.li>
+                  <motion.li
+                    className="flex items-start gap-3 text-white/90 text-sm"
+                    initial={{ opacity: 0, x: -15 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                  >
+                    <span className="text-accent mt-0.5 flex-shrink-0 opacity-100">✓</span>
+                    <span>Nível da sua clínica: risco, transição, crescimento ou estruturada</span>
+                  </motion.li>
+                  <motion.li
+                    className="flex items-start gap-3 text-white/90 text-sm"
+                    initial={{ opacity: 0, x: -15 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                  >
+                    <span className="text-accent mt-0.5 flex-shrink-0 opacity-100">✓</span>
+                    <span>Relatório Estratégico completo no seu e-mail</span>
+                  </motion.li>
                 </ul>
               </motion.div>
             </div>
@@ -115,15 +126,18 @@ export function HeroSection() {
                 <GlassCard variant="dark" hover={false} className="p-6 md:p-8 border border-white/10 backdrop-blur-xl bg-primary/60">
                   <div className="text-center mb-8">
                     <h3 className="text-lg font-semibold text-white mb-1">
-                      Baixe Grátis Agora
+                      Descubra seu Score GIA
                     </h3>
                     <p className="text-white/50 text-sm">
-                      Preencha os dados abaixo e receba em menos de 2 minutos.
+                      9 perguntas · Menos de 3 minutos · Resultado na hora
                     </p>
                   </div>
-
-                  <LeadForm variant="dark" />
-
+                  <Link
+                    href="/quiz"
+                    className="block w-full bg-accent text-primary px-6 py-4 rounded-lg font-semibold text-center hover:bg-accent-light transition-colors"
+                  >
+                    Fazer o Quiz
+                  </Link>
                   <div className="mt-8 pt-8 border-t border-white/10">
                     <div className="flex items-center justify-center gap-4">
                       <div className="flex -space-x-2">
@@ -146,7 +160,7 @@ export function HeroSection() {
                         ))}
                       </div>
                       <div className="text-xs text-white/50">
-                        <span className="text-accent font-semibold">+{siteConfig.dentista.numeroPacientes}</span> pessoas já baixaram
+                        <span className="text-accent font-semibold">+{siteConfig.dentista.numeroPacientes}</span> já fizeram o quiz
                       </div>
                     </div>
                   </div>

@@ -34,7 +34,7 @@ export default function ObrigadoPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          O link para download do e-book <strong className="text-accent">{siteConfig.ebook.titulo}</strong> foi enviado para seu email. Verifique também a caixa de spam.
+          O próximo passo é preencher a <strong className="text-accent">Calculadora CHC</strong>. Após concluir a Calculadora, seu <strong className="text-accent">Relatório Estratégico completo</strong> (GIA + CHC) será enviado por e-mail. Verifique também a caixa de spam.
         </motion.p>
 
         <motion.div
@@ -43,18 +43,23 @@ export default function ObrigadoPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
+          <a
+            href={siteConfig.clinica.calculadoraUrl}
+            className="block w-full bg-accent text-primary px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-accent-light transition-colors text-center"
+          >
+            Preencher a Calculadora e receber meu Relatório
+          </a>
           <Link
             href="/"
-            className="block w-full bg-accent text-primary px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-accent-light transition-colors"
+            className="block w-full bg-transparent border border-white/30 text-white px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-white/10 transition-colors text-center"
           >
             Voltar ao Início
           </Link>
-          
           <a
             href={`https://wa.me/55${siteConfig.clinica.whatsapp.replace(/\D/g, "")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full bg-transparent border border-accent text-accent px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-accent hover:text-primary transition-colors"
+            className="block w-full bg-transparent border border-accent text-accent px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-accent hover:text-primary transition-colors text-center"
           >
             Falar no WhatsApp
           </a>

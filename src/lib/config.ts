@@ -22,6 +22,7 @@ Desenvolveu o Método G.I.A. 7D após viver na pele o paradoxo da agenda cheia s
     uf: "PA",
     whatsapp: "5199999999",
     regiaoAtendida: "Todo o Brasil (Online)",
+    calculadoraUrl: "https://calculadora.gestaokersten.com.br",
   },
 
   ebook: {
@@ -36,8 +37,8 @@ Desenvolveu o Método G.I.A. 7D após viver na pele o paradoxo da agenda cheia s
   },
 
   seo: {
-    title: "O Paradoxo da Agenda Cheia | Dra. Deise Kersten - E-book Gratuito",
-    description: "Descubra por que 70% dos dentistas trabalham no prejuízo sem saber e como usar IA para sair dessa estatística. E-book gratuito.",
+    title: "Score GIA | Quiz Gestão, Influência e Automação | Dra. Deise Kersten",
+    description: "Descubra seu Score GIA em 9 perguntas. Avalie Gestão, Influência e Automação da sua clínica e receba o Relatório Estratégico completo por e-mail.",
   },
 
   diferenciais: [
