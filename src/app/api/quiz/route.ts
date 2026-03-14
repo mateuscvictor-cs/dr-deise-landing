@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { calculateScores } from "@/lib/quiz-scoring"
-import { supabaseAdmin } from "@/lib/supabase-server"
+import { getSupabaseAdmin } from "@/lib/supabase-server"
 import type { QuizSubmitPayload, QuizAnswer } from "@/types"
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -62,6 +62,7 @@ export async function POST(request: NextRequest) {
       nivel,
     }
 
+    const supabaseAdmin = getSupabaseAdmin()
     const { error } = await supabaseAdmin.from("gia_quiz_results").insert(row)
 
     if (error) {
